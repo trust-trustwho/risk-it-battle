@@ -9,11 +9,11 @@ export default class BaseExplorationScene extends Phaser.Scene {
     this.cursors = null;
     this.wasd = null;
     this.keyE = null;
-    this.keyEnter = null;
     this.obstacles = null;
     this.interactables = [];
     this.activeInteractable = null;
     this.isInputDisabled = false;
+    this.interactionResumeAt = 0;
     this.playerFacing = 'down';
     this.playerSpeed = 135;
     this.walkFrameTimer = 0;
@@ -49,7 +49,6 @@ export default class BaseExplorationScene extends Phaser.Scene {
       right: Phaser.Input.Keyboard.KeyCodes.D,
     });
     this.keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-    this.keyEnter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
     if (this.input && this.input.keyboard) {
       this.input.keyboard.clearCaptures();
     }
@@ -125,7 +124,20 @@ export default class BaseExplorationScene extends Phaser.Scene {
   }
 
   setInputDisabled(disabled) {
-    this.isInputDisabled = Boolean(disabled);
+    const nextDisabled = Boolean(disabled);
+    const isResuming = this.isInputDisabled && !nextDisabled;
+
+    this.isInputDisabled = nextDisabled;
+
+    // Phaser tidak memproses JustDown selama overlay aktif karena update()
+    // berhenti lebih awal. Reset tombol saat status overlay berubah agar E yang
+    // menutup sebuah overlay tidak langsung membuka interaksi yang sama kembali.
+    if (this.keyE) this.keyE.reset();
+
+    if (isResuming) {
+      this.interactionResumeAt = (this.time?.now || 0) + 180;
+    }
+
     if (this.isInputDisabled && this.player && this.player.body) {
       this.player.setVelocity(0, 0);
       this.player.setTexture(`player_${this.playerFacing}_0`);
@@ -194,8 +206,9 @@ export default class BaseExplorationScene extends Phaser.Scene {
     // Check Proximity to Interactable Items
     this.checkProximity();
 
-    // Check Interaction Keys (E or Enter)
-    if (Phaser.Input.Keyboard.JustDown(this.keyE) || Phaser.Input.Keyboard.JustDown(this.keyEnter)) {
+    // Interaksi dunia (NPC, terminal, pintu, lift, dan objek) hanya memakai E.
+    const canInteract = time >= this.interactionResumeAt;
+    if (canInteract && Phaser.Input.Keyboard.JustDown(this.keyE)) {
       if (this.activeInteractable && this.activeInteractable.onInteract) {
         this.activeInteractable.onInteract();
       }
