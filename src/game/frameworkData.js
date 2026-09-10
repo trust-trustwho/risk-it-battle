@@ -1,0 +1,156 @@
+// frameworkData.js - Data Ensiklopedia Best Practice Tata Kelola TI & Risk IT (Bahasa Indonesia)
+
+export const FRAMEWORKS = {
+  RISK_IT: {
+    id: 'RISK_IT',
+    code: '01',
+    name: 'RISK IT',
+    category: 'MANAJEMEN RISIKO TI',
+    focus: 'Mengelola risiko yang berkaitan dengan TI dan dampaknya terhadap tujuan bisnis.',
+    domains: [
+      'Risk Governance (Tata Kelola Risiko)',
+      'Risk Evaluation (Evaluasi Risiko)',
+      'Risk Response (Penanganan Risiko)',
+    ],
+    advantages: [
+      'Menghubungkan risiko TI langsung dengan tujuan bisnis perusahaan',
+      'Membantu manajemen memprioritaskan risiko berdasarkan dampak',
+      'Mendukung pengambilan keputusan berbasis tingkat toleransi risiko',
+      'Memberikan visibilitas holistik terhadap paparan risiko teknologi',
+    ],
+    limitations: [
+      'Membutuhkan kompetensi dan pemahaman manajemen risiko yang memadai',
+      'Memerlukan koordinasi lintas departemen dan komitmen manajemen puncak',
+      'Implementasi membutuhkan waktu dan sumber daya pada organisasi yang prosesnya belum matang',
+    ],
+    application: 'Dapat diterapkan pada semua organisasi yang bergantung pada teknologi informasi.',
+    gameplayNote: 'Catatan: Misi 2 menyederhanakan penerapan Risk IT menjadi penetapan konteks dan kepemilikan, penilaian bisnis, respons dan kontrol, serta pemantauan dan pelaporan agar mudah dipahami dalam gameplay.',
+  },
+  COBIT: {
+    id: 'COBIT',
+    code: '02',
+    name: 'COBIT',
+    category: 'TATA KELOLA & PENGELOLAAN TI',
+    focus: 'Membantu organisasi mengatur tata kelola dan pengelolaan informasi dan teknologi perusahaan agar selaras dengan tujuan bisnis.',
+    domains: [
+      'Evaluate, Direct and Monitor (EDM)',
+      'Align, Plan and Organize (APO)',
+      'Build, Acquire and Implement (BAI)',
+      'Deliver, Service and Support (DSS)',
+      'Monitor, Evaluate and Assess (MEA)',
+    ],
+    advantages: [
+      'Menghubungkan tujuan bisnis dengan sasaran tata kelola TI secara terstruktur',
+      'Menyediakan tolok ukur (benchmarking) dan penilaian kapabilitas proses yang komprehensif',
+      'Mendukung kepatuhan regulasi dan audit sistem informasi tingkat enterprise',
+    ],
+    limitations: [
+      'Ruang lingkup sangat luas dan kompleks sehingga memerlukan adaptasi (tailoring)',
+      'Membutuhkan investasi pelatihan dan waktu pemetaan proses yang signifikan',
+    ],
+    application: 'Organisasi berskala menengah hingga besar, perbankan, dan BUMN yang memerlukan tata kelola TI tingkat korporat.',
+    gameplayNote: null,
+  },
+  ITIL: {
+    id: 'ITIL',
+    code: '03',
+    name: 'ITIL',
+    category: 'MANAJEMEN LAYANAN TI',
+    focus: 'Membantu organisasi menciptakan nilai bersama melalui pengelolaan, penyampaian, dan peningkatan layanan TI yang selaras dengan kebutuhan pengguna serta tujuan bisnis.',
+    domains: [
+      'Service Value System (Sistem Nilai Layanan)',
+      'Service Value Chain (Rantai Nilai Layanan)',
+      'Guiding Principles (Prinsip Panduan)',
+      'Four Dimensions & Management Practices (Empat Dimensi dan Praktik Manajemen)',
+      'Continual Improvement (Peningkatan Berkelanjutan)',
+    ],
+    advantages: [
+      'Mendorong penciptaan nilai bersama antara penyedia layanan, pengguna, dan pemangku kepentingan',
+      'Meningkatkan kualitas, keandalan, dan pengalaman pengguna layanan TI',
+      'Menyediakan praktik yang fleksibel untuk insiden, masalah, perubahan, dan peningkatan layanan',
+    ],
+    limitations: [
+      'Membutuhkan penyesuaian praktik dengan konteks, ukuran, dan tingkat kematangan organisasi',
+      'Dapat menambah birokrasi apabila diterapkan secara kaku tanpa prinsip fokus pada nilai dan kemajuan iteratif',
+    ],
+    application: 'Organisasi atau unit yang mengelola produk dan layanan berbasis TI, seperti helpdesk, pusat data, penyedia cloud, perbankan, rumah sakit, universitas, dan layanan digital pemerintahan.',
+    gameplayNote: 'Catatan: Entri ini menggunakan konsep ITIL 4, bukan struktur lifecycle ITIL v3.',
+  },
+  ISO_27001: {
+    id: 'ISO_27001',
+    code: '04',
+    name: 'ISO 27001',
+    category: 'KEAMANAN INFORMASI',
+    focus: 'Membangun Sistem Manajemen Keamanan Informasi (SMKI) untuk melindungi kerahasiaan, integritas, dan ketersediaan data.',
+    domains: [
+      'Kebijakan Keamanan & Organisasi Keamanan Informasi',
+      'Manajemen Aset & Kontrol Akses Sistem',
+      'Kriptografi & Keamanan Operasi',
+      'Keamanan Fisik dan Lingkungan Komputasi',
+      'Manajemen Insiden & Kontinuitas Keamanan Informasi',
+    ],
+    advantages: [
+      'Standar internasional terakreditasi dan diakui secara global',
+      'Meningkatkan kepercayaan pelanggan dan mitra bisnis terhadap keamanan data',
+      'Memenuhi persyaratan hukum, regulasi perlindungan data pribadi, dan audit keamanan',
+    ],
+    limitations: [
+      'Proses sertifikasi dan audit berkala memerlukan biaya serta dokumentasi yang ketat',
+      'Keamanan dapat menjadi sekadar formalitas kepatuhan jika budaya keamanan tidak dibangun',
+    ],
+    application: 'Semua organisasi yang mengelola data sensitif, institusi finansial, layanan kesehatan, dan e-commerce.',
+    gameplayNote: null,
+  },
+  PMI: {
+    id: 'PMI',
+    code: '05',
+    name: 'PMI',
+    category: 'MANAJEMEN PROYEK',
+    focus: 'Praktik dan panduan standar (PMBOK) untuk mengelola proyek TI mulai dari inisiasi, perencanaan, eksekusi, hingga penutupan.',
+    domains: [
+      'Manajemen Integrasi & Ruang Lingkup Proyek',
+      'Manajemen Waktu & Jadwal Deliverables',
+      'Manajemen Anggaran & Biaya Proyek',
+      'Manajemen Kualitas & Sumber Daya Tim',
+      'Manajemen Komunikasi & Risiko Proyek',
+    ],
+    advantages: [
+      'Membantu proyek selesai tepat waktu, sesuai anggaran, dan sesuai spesifikasi',
+      'Memberikan kejelasan peran tim dan visibilitas progres kepada pemangku kepentingan',
+      'Mengidentifikasi dan memitigasi risiko kegagalan proyek sejak tahap perencanaan',
+    ],
+    limitations: [
+      'Dapat menimbulkan beban dokumentasi yang tinggi jika diterapkan tanpa adaptasi fleksibel',
+      'Kurang membahas tata kelola operasional rutin setelah proyek diserahterimakan',
+    ],
+    application: 'Pengembangan software, migrasi infrastruktur data center, implementasi ERP, dan proyek digital.',
+    gameplayNote: null,
+  },
+  CMMI: {
+    id: 'CMMI',
+    code: '06',
+    name: 'CMMI',
+    category: 'PENINGKATAN PROSES',
+    focus: 'Meningkatkan kemampuan, konsistensi, dan kematangan proses pengembangan perangkat lunak dan rekayasa sistem.',
+    domains: [
+      'Level 1: Initial (Proses ad-hoc dan tidak terduga)',
+      'Level 2: Managed (Proses direncanakan dan dikelola di tingkat proyek)',
+      'Level 3: Defined (Proses terstandarisasi di seluruh organisasi)',
+      'Level 4: Quantitatively Managed (Proses diukur secara statistik dan terkontrol)',
+      'Level 5: Optimizing (Fokus pada inovasi dan peningkatan berkelanjutan)',
+    ],
+    advantages: [
+      'Meningkatkan prediktabilitas kualitas software dan mengurangi bug/cacat rilis',
+      'Membantu organisasi memahami tingkat kematangan proses saat ini dan target perbaikan',
+      'Menjadi acuan kualifikasi kredibilitas vendor dalam pengadaan teknologi skala besar',
+    ],
+    limitations: [
+      'Penilaian appraisal level CMMI membutuhkan investasi waktu dan biaya yang besar',
+      'Fokus utama pada proses rekayasa, bukan pada strategi mitigasi risiko bisnis keseluruhan',
+    ],
+    application: 'Software house, vendor integrasi sistem, departemen riset dan pengembangan (R&D) teknologi.',
+    gameplayNote: null,
+  },
+};
+
+export const FRAMEWORK_KEYS = ['RISK_IT', 'COBIT', 'ITIL', 'ISO_27001', 'PMI', 'CMMI'];
